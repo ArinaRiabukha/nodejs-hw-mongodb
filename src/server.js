@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import pino from "pino-http";
 import { getContacts, getContactsById } from "./services/contacts.js";
+import { getEnvVar } from "./utils/getEnvVar.js";
 
 export const setupServer = ()=> {
     const app = express();
@@ -49,7 +50,7 @@ export const setupServer = ()=> {
         });
     });
 
-    const PORT = process.env.PORT || 3000;
+    const PORT = Number(getEnvVar("PORT", 3000));
     app.listen(PORT, () => {
         console.log(`Server is running on port ${PORT}`);
     });
