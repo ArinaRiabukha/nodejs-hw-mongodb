@@ -11,11 +11,10 @@ export const getContacts = async ({
 }) => {
   const skip = (page - 1) * perPage;
 
-  if (filters.userId) {
-    ContactCollection.find().where('userId').equals(filters.userId);
-  }
-
   const filter = {};
+  if (filters.userId) {
+    filter.userId = filters.userId;
+  }
   if (filters.parsedType) {
     filter.contactType = filters.parsedType;
   }
@@ -40,7 +39,8 @@ export const getContacts = async ({
     ...paginationData,
   };
 };
-export const getContactsById = (id) => ContactCollection.findOne({ _id: id });
+export const getContactsById = (id, userId) =>
+  ContactCollection.findOne({ _id: id, userId });
 export const addContact = (payload) => ContactCollection.create(payload);
 export const updateContact = async (_id, payload) => {
   return ContactCollection.findByIdAndUpdate(_id, payload);
