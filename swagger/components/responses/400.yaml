@@ -1,4 +1,4 @@
-description: Contact not found
+description: Bad request
 content:
   application/json:
     schema:
@@ -9,7 +9,7 @@ content:
       properties:
         status:
           type: integer
-          example: 404
+          example: 400
         message:
           type: string
-          example: 'Contact not found'
+          example: 'Bad request'

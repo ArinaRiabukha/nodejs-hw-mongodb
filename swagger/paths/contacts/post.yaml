@@ -37,6 +37,10 @@ requestBody:
             type: string
             enum: ['work', 'home', 'personal']
             default: personal
+          photo:
+            description: "Link to contact's photo"
+            type: string
+            format: binary
 responses:
   '201':
     description: Creates a contact
@@ -60,3 +64,5 @@ responses:
               $ref: ../../components/shemas/contact.yaml
   '401':
     $ref: '../../components/responses/401.yaml'
+  '400':
+    $ref: '../../components/responses/400.yaml'

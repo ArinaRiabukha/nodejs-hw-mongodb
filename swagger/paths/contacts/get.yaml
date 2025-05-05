@@ -34,7 +34,7 @@ parameters:
       type: boolean
       example: false
   - in: query
-    name: parsedType
+    name: contactType
     schema:
       type: string
       enum: ['work', 'home', 'personal']
@@ -92,3 +92,5 @@ responses:
                   example: true
   '401':
     $ref: '../../components/responses/401.yaml'
+  '400':
+    $ref: '../../components/responses/400.yaml'
