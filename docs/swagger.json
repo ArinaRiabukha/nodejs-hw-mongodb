@@ -21,10 +21,6 @@
     {
       "name": "Contacts",
       "description": "Operations about users."
-    },
-    {
-      "name": "Auth",
-      "description": "Auth operations."
     }
   ],
   "paths": {
@@ -170,9 +166,6 @@
                 }
               }
             }
-          },
-          "400": {
-            "$ref": "#/components/responses/400"
           },
           "401": {
             "$ref": "#/components/responses/401"

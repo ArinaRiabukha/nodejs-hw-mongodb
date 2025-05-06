@@ -15,8 +15,8 @@ export const getContacts = async ({
   if (filters.userId) {
     filter.userId = filters.userId;
   }
-  if (filters.parsedType) {
-    filter.contactType = filters.parsedType;
+  if (filters.contactType) {
+    filter.contactType = filters.contactType;
   }
   if (typeof filters.isFavourite === 'boolean') {
     filter.isFavourite = filters.isFavourite;
